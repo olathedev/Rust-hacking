@@ -31,7 +31,27 @@ struct Player {
 // }
 
 // Tupple like structs
+// fn main() {
+//     struct Color(i32, i32, i32)
+//     struct Location(i64, i64, i64)
+// }
+
+// area of a rectagngle
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn main() {
-    struct Color(i32, i32, i32)
-    struct Location(i64, i64, i64)
+    let rect = Rectangle {
+        width: 30,
+        height: 30,
+    };
+
+    println!("the area of the rectangle is {} square pixels", area(&rect));
+}
+
+fn area(reactangle: &Rectangle) -> u32 {
+    reactangle.height * reactangle.width
 }
