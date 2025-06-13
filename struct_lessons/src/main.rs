@@ -13,5 +13,19 @@ fn main() {
     };
 
     let player1_username = player1.username;
-    println!("{}", player1)
+    println!("{}", player1_username)
+
+    let player2 = create_player(String::from("john doe"))
+    let player3 = create_player(String::from("salama"))
+
+
+}
+
+
+fn create_player(username: String) -> Player {
+    Player {
+        username,
+        points: 0,
+        streak: 0,
+    }
 }
