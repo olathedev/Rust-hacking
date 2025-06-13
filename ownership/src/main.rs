@@ -13,11 +13,24 @@
 // situation where you want to borrow value as mutable
 // fix: use a mutabele borrow
 // note: you can only have one mutable reference for a particular data in a scope
+// fn main() {
+//     let mut s1 = String::from("Heyy");
+//     change_string(&mut s1);
+// }
+
+// fn change_string(param: &mut String) {
+//     param.push_str(", yoo");
+// }
+
 fn main() {
-    let mut s1 = String::from("Heyy");
-    change_string(&mut s1);
+    let mut s = String::from("Heyy");
+
+    let s1 = &s;
+    let s2 = &s;
+    
+    println!("{s}");
+
+    let s3 = &mut s;
 }
 
-fn change_string(param: &mut String) {
-    param.push_str(", yoo");
-}
+// Dangling reference: a varibale that points to invalid data
